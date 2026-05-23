@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Site Secretary",
+    "tagline": "Interactive notes for site operations"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "notes": "Notes & Issues",
+    "people": "People",
+    "alignments": "Alignments",
+    "logout": "Log out"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "email": "Email",
+    "magicLink": "Send magic link",
+    "checkInbox": "Check your inbox for the sign-in link.",
+    "signInToContinue": "Sign in to continue"
+  },
+  "notes": {
+    "all": "All notes",
+    "new": "New note",
+    "title": "Title",
+    "body": "Notes",
+    "kind": "Kind",
+    "status": "Status",
+    "section": "Section",
+    "kmFrom": "From KM",
+    "kmTo": "To KM",
+    "tags": "Tags",
+    "save": "Save",
+    "saving": "Saving…",
+    "history": "Status history",
+    "changeStatus": "Change status",
+    "statusChangeNote": "Note (optional)",
+    "logChange": "Log change",
+    "empty": "No notes yet. Create your first one.",
+    "kinds": {
+      "note": "Note",
+      "issue": "Issue",
+      "incident": "Incident",
+      "event": "Event",
+      "audit": "Audit",
+      "progress": "Progress update",
+      "challenge": "Challenge"
+    },
+    "statuses": {
+      "open": "Open",
+      "in_progress": "In progress",
+      "blocked": "Blocked",
+      "resolved": "Resolved",
+      "closed": "Closed",
+      "cancelled": "Cancelled"
+    }
+  },
+  "voice": {
+    "record": "Record",
+    "stop": "Stop",
+    "transcribing": "Transcribing…",
+    "error": "Could not record"
+  },
+  "common": {
+    "search": "Search",
+    "cancel": "Cancel",
+    "back": "Back",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "loading": "Loading…",
+    "language": "Language"
+  }
+}
