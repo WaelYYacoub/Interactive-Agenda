@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "سكرتير الموقع",
+    "tagline": "ملاحظات تفاعلية لعمليات الموقع"
+  },
+  "nav": {
+    "dashboard": "اللوحة الرئيسية",
+    "notes": "الملاحظات والمشاكل",
+    "people": "الأشخاص",
+    "alignments": "المسارات",
+    "logout": "تسجيل الخروج"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "email": "البريد الإلكتروني",
+    "magicLink": "أرسل رابط الدخول",
+    "checkInbox": "تحقق من بريدك للوصول إلى رابط الدخول.",
+    "signInToContinue": "سجّل الدخول للمتابعة"
+  },
+  "notes": {
+    "all": "كل الملاحظات",
+    "new": "ملاحظة جديدة",
+    "title": "العنوان",
+    "body": "النص",
+    "kind": "النوع",
+    "status": "الحالة",
+    "section": "القسم",
+    "kmFrom": "من كم",
+    "kmTo": "إلى كم",
+    "tags": "الوسوم",
+    "save": "حفظ",
+    "saving": "يحفظ…",
+    "history": "سجل الحالات",
+    "changeStatus": "تغيير الحالة",
+    "statusChangeNote": "ملاحظة (اختياري)",
+    "logChange": "سجّل التغيير",
+    "empty": "لا توجد ملاحظات بعد. أنشئ ملاحظتك الأولى.",
+    "kinds": {
+      "note": "ملاحظة",
+      "issue": "مشكلة",
+      "incident": "حادث",
+      "event": "حدث",
+      "audit": "تدقيق",
+      "progress": "تحديث التقدم",
+      "challenge": "تحدٍّ"
+    },
+    "statuses": {
+      "open": "مفتوح",
+      "in_progress": "قيد التنفيذ",
+      "blocked": "متوقف",
+      "resolved": "تم حله",
+      "closed": "مغلق",
+      "cancelled": "ملغى"
+    }
+  },
+  "voice": {
+    "record": "تسجيل",
+    "stop": "إيقاف",
+    "transcribing": "يحوّل النص…",
+    "error": "تعذر التسجيل"
+  },
+  "common": {
+    "search": "بحث",
+    "cancel": "إلغاء",
+    "back": "رجوع",
+    "delete": "حذف",
+    "confirm": "تأكيد",
+    "loading": "تحميل…",
+    "language": "اللغة"
+  }
+}
