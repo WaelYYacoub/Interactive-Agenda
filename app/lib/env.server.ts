@@ -1,6 +1,15 @@
 function required(name: string): string {
-  const value = process.env[name];
-  if (!value) throw new Error(`Missing env var ${name}`);
+  // Try non-prefixed first (server runtime)
+  let value = process.env[name];
+  
+  // Fall back to VITE_ prefixed (build-time injected)
+  if (!value) {
+    value = process.env[`VITE_${name}`];
+  }
+  
+  if (!value) {
+    throw new Error(`Missing env var ${name}`);
+  }
   return value;
 }
 
