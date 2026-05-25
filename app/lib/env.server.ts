@@ -1,22 +1,35 @@
-function required(name: string): string {
-  // Try non-prefixed first (server runtime)
-  let value = process.env[name];
-  
-  // Fall back to VITE_ prefixed (build-time injected)
-  if (!value) {
-    value = process.env[`VITE_${name}`];
+// Don't load at startup - delay until first use
+let cachedEnv: Record<string, string> | null = null;
+
+function getEnv(): Record<string, string> {
+  if (cachedEnv) return cachedEnv;
+
+  cachedEnv = {
+    SUPABASE_URL: process.env.SUPABASE_URL || "",
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY || "",
+    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY || "",
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY || "",
+    SESSION_SECRET: process.env.SESSION_SECRET || "",
+  };
+
+  // Validate only when accessed
+  const missing = Object.entries(cachedEnv)
+    .filter(([, value]) => !value)
+    .map(([key]) => key);
+
+  if (missing.length > 0) {
+    throw new Error(`Missing env vars: ${missing.join(", ")}`);
   }
-  
-  if (!value) {
-    throw new Error(`Missing env var ${name}`);
-  }
-  return value;
+
+  return cachedEnv;
 }
 
-export const env = {
-  SUPABASE_URL: required("SUPABASE_URL"),
-  SUPABASE_ANON_KEY: required("SUPABASE_ANON_KEY"),
-  SUPABASE_SERVICE_ROLE_KEY: required("SUPABASE_SERVICE_ROLE_KEY"),
-  OPENAI_API_KEY: required("OPENAI_API_KEY"),
-  SESSION_SECRET: required("SESSION_SECRET"),
-};
+export const env = new Proxy({}, {
+  get(target, prop: string | symbol) {
+    if (typeof prop === "string") {
+      const allEnv = getEnv();
+      return allEnv[prop];
+    }
+    return undefined;
+  },
+}) as Record<string, string>;
